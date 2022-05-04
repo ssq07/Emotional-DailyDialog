@@ -1,0 +1,60 @@
+data:
+    corpus_1:
+        path_src: EA_small/src-train.txt
+        path_tgt: EA_small/tgt-train.txt
+    valid:
+        path_src: EA_small/src-val.txt
+        path_tgt: EA_small/tgt-val.txt
+
+src_vocab: EA_small/run320/trial_src.vocab
+tgt_vocab: EA_small/run320/trial_tgt.vocab
+
+world_size: 1
+gpu_ranks: [0]
+batch_size: 8
+save_model: EA_small/run320/model
+save_checkpoint_steps: 2000
+train_steps: 10000
+valid_steps: 5000
+share_vocab: True
+
+
+
+# Batching
+batch_type: "tokens"
+valid_batch_size: 8
+max_generator_batches: 8
+accum_count: [2]
+accum_steps: [0]
+
+# Optimization
+model_dtype: "fp32"
+optim: "adam"
+learning_rate: 2
+warmup_steps: 8000
+decay_method: "noam"
+adam_beta2: 0.998
+max_grad_norm: 0
+label_smoothing: 0.1
+param_init: 0
+param_init_glorot: true
+normalization: "tokens"
+
+encoder_type: ea_trans
+decoder_type: ea_trans
+position_encoding: true
+enc_layers: 6
+dec_layers: 6
+heads: 8
+rnn_size: 512
+word_vec_size: 512
+transformer_ff: 2048
+dropout_steps: [0]
+dropout: [0.2]
+attention_dropout: [0.2]
+#encoder_type: transformer
+#decoder_type: transformer
+#enc_rnn_size: 256
+#dec_rnn_size: 256
+#src_word_vec_size: 256
+#tgt_word_vec_size: 256

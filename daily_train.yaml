@@ -1,0 +1,23 @@
+data:
+    corpus_1:
+        path_src: daily_dialog/src-train.txt
+        path_tgt: daily_dialog/tgt-train.txt
+    valid:
+        path_src: daily_dialog/src-val.txt
+        path_tgt: daily_dialog/tgt-val.txt
+
+src_vocab: daily_dialog/run116/trial_src.vocab
+tgt_vocab: daily_dialog/run116/trial_src.vocab
+
+world_size: 1
+gpu_ranks: [0]
+
+save_model: daily_dialog/run116/model
+save_checkpoint_steps: 500
+train_steps: 1000
+valid_steps: 500
+#encoder_type: transformer
+#decoder_type: transformer
+#share_vocab: True
+#enc_rnn_size: 512
+#dec_rnn_size: 512

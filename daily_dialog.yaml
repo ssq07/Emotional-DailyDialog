@@ -1,0 +1,14 @@
+
+
+save_data: daily_dialog/run116/trial
+src_vocab: daily_dialog/run116/trial_src.vocab
+tgt_vocab: daily_dialog/run116/trial_tgt.vocab
+overwrite: False
+
+data:
+    corpus_1:
+        path_src: daily_dialog/src-train.txt
+        path_tgt: daily_dialog/tgt-train.txt
+    valid:
+        path_src: daily_dialog/src-val.txt
+        path_tgt: daily_dialog/tgt-val.txt

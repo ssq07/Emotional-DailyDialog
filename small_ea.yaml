@@ -1,0 +1,12 @@
+save_data: EA_small/run320/trial
+src_vocab: EA_small/run320/trial_src.vocab
+tgt_vocab: EA_small/run320/trial_tgt.vocab
+overwrite: False
+
+data:
+    corpus_1:
+        path_src: EA_small/src-train.txt
+        path_tgt: EA_small/tgt-train.txt
+    valid:
+        path_src: EA_small/src-val.txt
+        path_tgt: EA_small/tgt-val.txt
